@@ -1,9 +1,10 @@
 {
   "config": {
     "chainId": 9705,
-    "clique": {
+    "posa": {
       "period": 3,
-      "epoch": 300
+      "epoch": 300,
+      "sealerbalancethreshold": 0
     }
   },
   "nonce": "0x0",

@@ -8,7 +8,7 @@ services:
       - "--nodekeyhex=c199a45cba57765a132004bf330ad868ef51335b64e0693458d2282c67f2d24b"
       - "--syncmode=full"
     volumes:
-      - "./data/bootnode:/datadir/node/coq"
+      - "./data/bootnode/coq:/datadir/node/coq"
     ports:
       - "30303:30303"
     restart: always
@@ -30,12 +30,12 @@ services:
       - "--syncmode=full"
       - "--allow-insecure-unlock"
       - "--unlock=0bfa300c5e3ae73dce81fe95653e80aa88f1aacc"
-      - "--password=/datadir/password.txt"
+      - "--password=/password.txt"
       - "--bootnodes=enode://c81dd5f432557819de79c21d59b50f84463a746ada3f900ba63364fa9de062bde2637d35627d1af9514e347e4f8e0495691bc783e1f996c402400840199f4841@bootnode:30303"
     volumes:
-      - "./data/validator_1:/datadir/node/coq"
-      - "./password.txt:/datadir/password.txt"
-      - "./keystore:/datadir/node/keystore"
+      - "./data/validator_1/coq:/datadir/node/coq"
+      - "./password.txt:/password.txt"
+      - "./data/validator_1/keystore:/datadir/node/keystore"
     restart: always
     logging:
       driver: "json-file"
@@ -55,12 +55,12 @@ services:
       - "--syncmode=full"
       - "--allow-insecure-unlock"
       - "--unlock=df46be5ec52bb359c84140aed6cad8074960d8c9"
-      - "--password=/datadir/password.txt"
+      - "--password=/password.txt"
       - "--bootnodes=enode://c81dd5f432557819de79c21d59b50f84463a746ada3f900ba63364fa9de062bde2637d35627d1af9514e347e4f8e0495691bc783e1f996c402400840199f4841@bootnode:30303"
     volumes:
-      - "./data/validator_2:/datadir/node/coq"
-      - "./password.txt:/datadir/password.txt"
-      - "./keystore:/datadir/node/keystore"
+      - "./data/validator_2/coq:/datadir/node/coq"
+      - "./password.txt:/password.txt"
+      - "./data/validator_2/keystore:/datadir/node/keystore"
     restart: always
     logging:
       driver: "json-file"
@@ -80,12 +80,12 @@ services:
       - "--syncmode=full"
       - "--allow-insecure-unlock"
       - "--unlock=5da5b8cc83285ec3defef17dd335bdfae5898214"
-      - "--password=/datadir/password.txt"
+      - "--password=/password.txt"
       - "--bootnodes=enode://c81dd5f432557819de79c21d59b50f84463a746ada3f900ba63364fa9de062bde2637d35627d1af9514e347e4f8e0495691bc783e1f996c402400840199f4841@bootnode:30303"
     volumes:
-      - "./data/validator_3:/datadir/node/coq"
-      - "./password.txt:/datadir/password.txt"
-      - "./keystore:/datadir/node/keystore"
+      - "./data/validator_3/coq:/datadir/node/coq"
+      - "./password.txt:/password.txt"
+      - "./data/validator_3/keystore:/datadir/node/keystore"
     restart: always
     logging:
       driver: "json-file"
@@ -116,9 +116,7 @@ services:
       - "--allow-insecure-unlock"
       - "--bootnodes=enode://c81dd5f432557819de79c21d59b50f84463a746ada3f900ba63364fa9de062bde2637d35627d1af9514e347e4f8e0495691bc783e1f996c402400840199f4841@bootnode:30303"
     volumes:
-      - "./data/rpc:/datadir/node/coq"
-      - "./password.txt:/datadir/password.txt"
-      - "./keystore:/datadir/node/keystore"
+      - "./data/rpc/coq:/datadir/node/coq"
     restart: always
     ports:
       - "8545:8545"
