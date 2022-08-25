@@ -18,6 +18,7 @@
 3. start a local test network
 
    ```shell
+   git clone https://github.com/Ankr-network/coqchain-setup.git
    docker-compose up -d 
    ```
 
