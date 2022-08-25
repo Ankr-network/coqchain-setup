@@ -19,6 +19,7 @@
 
    ```shell
    git clone https://github.com/Ankr-network/coqchain-setup.git
+   cd coqchain-setup
    docker-compose up -d 
    ```
 
