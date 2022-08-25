@@ -1,0 +1,143 @@
+version: "3.5"
+services:
+  bootnode:
+    image: coqchain:latest
+    command:
+      - "--datadir=/datadir/node"
+      - "--networkid=9705"
+      - "--nodekeyhex=c199a45cba57765a132004bf330ad868ef51335b64e0693458d2282c67f2d24b"
+      - "--syncmode=full"
+    volumes:
+      - "./data/bootnode/coq:/datadir/node/coq"
+    ports:
+      - "30303:30303"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "30m"
+        max-file: "10"
+    networks:
+      - coqchain-local
+
+  validator_1:
+    image: coqchain:latest
+    command:
+      - "--datadir=/datadir/node"
+      - "--networkid=9705"
+      - "--txlookuplimit=0"
+      - "--mine"
+      - "--syncmode=full"
+      - "--allow-insecure-unlock"
+      - "--unlock=0bfa300c5e3ae73dce81fe95653e80aa88f1aacc"
+      - "--password=/password.txt"
+      - "--config=/config.toml"
+    volumes:
+      - "./data/validator_1/coq:/datadir/node/coq"
+      - "./password.txt:/password.txt"
+      - "./data/validator_1/keystore:/datadir/node/keystore"
+      - "./config.toml:/config.toml"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "30m"
+        max-file: "10"
+    networks:
+      - coqchain-local
+
+  validator_2:
+    image: coqchain:latest
+    command:
+      - "--datadir=/datadir/node"
+      - "--networkid=9705"
+      - "--txlookuplimit=0"
+      - "--mine"
+      - "--syncmode=full"
+      - "--allow-insecure-unlock"
+      - "--unlock=df46be5ec52bb359c84140aed6cad8074960d8c9"
+      - "--password=/password.txt"
+      - "--config=/config.toml"
+    volumes:
+      - "./data/validator_2/coq:/datadir/node/coq"
+      - "./password.txt:/password.txt"
+      - "./data/validator_2/keystore:/datadir/node/keystore"
+      - "./config.toml:/config.toml"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "30m"
+        max-file: "10"
+    networks:
+      - coqchain-local
+
+  validator_3:
+    image: coqchain:latest
+    command:
+      - "--datadir=/datadir/node"
+      - "--networkid=9705"
+      - "--txlookuplimit=0"
+      - "--mine"
+      - "--syncmode=full"
+      - "--allow-insecure-unlock"
+      - "--unlock=5da5b8cc83285ec3defef17dd335bdfae5898214"
+      - "--password=/password.txt"
+      - "--config=/config.toml"
+    volumes:
+      - "./data/validator_3/coq:/datadir/node/coq"
+      - "./password.txt:/password.txt"
+      - "./data/validator_3/keystore:/datadir/node/keystore"
+      - "./config.toml:/config.toml"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "30m"
+        max-file: "10"
+    networks:
+      - coqchain-local
+
+  rpc:
+    image: coqchain:latest
+    command:
+      - "--datadir=/datadir/node"
+      - "--networkid=9705"
+      - "--txlookuplimit=0"
+      - "--http"
+      - "--http.addr=0.0.0.0"
+      - "--http.api=eth,net,web3,debug,txpool"
+      - "--http.port=8545"
+      - "--http.corsdomain=*"
+      - "--http.vhosts=*"
+      - "--ws"
+      - "--ws.addr=0.0.0.0"
+      - "--ws.api=eth,net,web3,debug,txpool"
+      - "--ws.port=8546"
+      - "--ws.origins=*"
+      - "--syncmode=full"
+      - "--gcmode=archive"
+      - "--allow-insecure-unlock"
+      - "--config=/config.toml"
+    volumes:
+      - "./data/rpc/coq:/datadir/node/coq"
+      - "./config.toml:/config.toml"
+    restart: always
+    ports:
+      - "8545:8545"
+      - "8546:8546"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "30m"
+        max-file: "10"
+    networks:
+      - coqchain-local
+      
+networks:
+   coqchain-local:
+       driver: bridge
+       ipam:
+         driver: default
+         config:
+           - subnet: 172.16.200.0/24
