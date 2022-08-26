@@ -132,6 +132,7 @@ services:
         max-file: "10"
     networks:
       - coqchain-local
+      
   faucet:
     image: image.ankr.com/library/coqchain-faucet:v1.0.0
     command:
@@ -151,6 +152,11 @@ services:
       - "./password.txt:/password.txt"
       - "./faucet:/root/.faucet"
     restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "30m"
+        max-file: "10"
     networks:
       - coqchain-local
       
