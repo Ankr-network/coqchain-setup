@@ -11,7 +11,7 @@
    ```shell
    git clone -b tidy https://github.com/Ankr-network/coqchain.git
    cd coqchain
-   git checkout 9c3de45e542fdccb7defa3f70f9e8657ecef210f
+   git checkout 94ab4b1db673b5c4e206a35b9911985f718438eb
    docker build -t coqchain:latest .
    ```
 
