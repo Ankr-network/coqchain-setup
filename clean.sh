@@ -13,8 +13,8 @@ rm -r data/validator_3/extenddb
 rm -r faucet/geth/
 rm -r faucet/keys*
 
-./coq init genesis.json --datadir ./data/bootnode/
-./coq init genesis.json --datadir ./data/rpc/
-./coq init genesis.json --datadir ./data/validator_1/
-./coq init genesis.json --datadir ./data/validator_2/
-./coq init genesis.json --datadir ./data/validator_3/
+./coq init ./genesis.json --datadir ./data/bootnode/
+./coq init ./genesis.json --datadir ./data/rpc/
+./coq init ./genesis.json --datadir ./data/validator_1/
+./coq init ./genesis.json --datadir ./data/validator_2/
+./coq init ./genesis.json --datadir ./data/validator_3/
