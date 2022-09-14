@@ -4,6 +4,7 @@ services:
     image: coqchain:latest
     command:
       - "--datadir=/datadir/node"
+      - "--syncmode=full"
       - "--networkid=9705"
       - "--nodekeyhex=c199a45cba57765a132004bf330ad868ef51335b64e0693458d2282c67f2d24b"
       - "--maxpeers=512"
