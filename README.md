@@ -13,6 +13,7 @@
    cd coqchain
    make coq
    docker build -t coqchain:latest .
+   docker build -f Dockerfile.faucet -t faucet:latest .
    ```
 
 3. Initialize the network
