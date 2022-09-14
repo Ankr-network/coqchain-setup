@@ -11,7 +11,7 @@
    ```shell
    git clone -b main https://github.com/Ankr-network/coqchain.git
    cd coqchain
-   make coq
+   make all
    docker build -t coqchain:latest .
    docker build -f Dockerfile.faucet -t faucet:latest .
    ```
