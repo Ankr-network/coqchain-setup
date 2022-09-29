@@ -38,7 +38,22 @@
     },
     "0xBC0f9Ef9432F83a6aAe846FA293F7D779CE27F1d": {
       "balance": "0x52b7d2dcc80cd400000000"
-    }
+    },
+    "0x1a6F16B4D4bc10C5cf517447D52886eae2cb9631": {
+      "balance": "0x52b7d2dcc80cd400000000"
+    },
+    "0x6B4ea95658c2736Afc867471160cEF938b800245": {
+      "balance": "0x52b7d2dcc80cd400000000"
+    },
+    "0x6bde54828eA6Aab6298B165FEC193C7ff9EeD8D0": {
+      "balance": "0x52b7d2dcc80cd400000000"
+    },
+    "0x41814975e4Dc4aF0E7D94D16a97aE16e9d6a37A3": {
+      "balance": "0x52b7d2dcc80cd400000000"
+    },
+    "0x90d8198c5A65609a3f30CDf91082707C60a55482": {
+      "balance": "0x52b7d2dcc80cd400000000"
+    },
   },
   "number": "0x0",
   "gasUsed": "0x0",
