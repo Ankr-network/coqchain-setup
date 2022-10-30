@@ -4,7 +4,7 @@
     "posa": {
       "period": 3,
       "epoch": 100,
-      "sealerbalancethreshold": 0
+      "sealerbalancethreshold": 100
     }
   },
   "nonce": "0x0",
