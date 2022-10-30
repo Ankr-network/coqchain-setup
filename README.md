@@ -9,7 +9,7 @@
 2. build the docker image and `coq`
 
    ```shell
-   git clone -b main https://github.com/Ankr-network/coqchain.git
+   git clone -b dev https://github.com/Ankr-network/coqchain.git
    cd coqchain
    make all
    docker build -t coqchain:latest .
